@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+/* If there is space to the right, 
+this shifts the words to the right */
 void moveUp(char *target) {
   int len = strlen(target);
   if (target[len - 1] != ' ')
@@ -36,15 +38,19 @@ void moveUp(char *target) {
   }
 }
 
+/* Copies a string onto another, 
+   does not place null character at
+   the end*/
 void stringCopy(char *target, char *new) {
 
   int len = strlen(new);
-
   for (int i = 0; i < len; i++) {
     target[i] = new[i];
   }
 }
 
+/* Checks the spaces in a sentence and 
+   evenly distributes them between words*/
 void checkSpaces(char *target, int maxWidth) {
   printf("Checking spaces for: |%s|\n", target);
   moveUp(target);
@@ -110,6 +116,7 @@ void checkSpaces(char *target, int maxWidth) {
   printf("\n");
 }
 
+/* Left justifies according to the leetcode description */
 char **fullJustify(char **words, int wordsSize, int maxWidth, int *returnSize) {
   printf("INIt return size %d\n", *returnSize);
   printf("MaxWidth: %d\n", maxWidth);
@@ -193,6 +200,7 @@ char **fullJustify(char **words, int wordsSize, int maxWidth, int *returnSize) {
   return output;
 }
 
+/* Main method used for trouble shooting.  */
 int main(int argc, char *argv[]) {
 
   int maxWidth = 0;
