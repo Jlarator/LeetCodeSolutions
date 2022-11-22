@@ -1,0 +1,18 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
+int main(int argc, char* argv[]){
+
+  int i = 0;
+  int m = 0;
+
+  if(i && m){
+
+    printf("Null values\n"); 
+  }else{
+    printf("Not null\n"); 
+  }
+  
+  return 0; 
+}
